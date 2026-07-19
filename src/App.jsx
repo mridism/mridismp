@@ -18,7 +18,7 @@ function App() {
       }}
     >
       <div className="relative  overflow-hidden">
-        {/* Background */}
+        {/* Backgroound */}
 
         <div className="fixed inset-0 -z-10 overflow-hidden">
           <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-500/20 blur-[170px] rounded-full" />
