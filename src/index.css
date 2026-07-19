@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* ---------- Theme Variables ---------- */
+
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text: #0f172a;
+  --glass: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(15, 23, 42, 0.08);
+}
+
+html.dark {
+  --bg: #030712;
+  --bg-secondary: #020617;
+  --text: #ffffff;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Global ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+
+  font-family: "Poppins", sans-serif;
+
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+/* ---------- Glass ---------- */
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  transition: 0.35s;
+}
+
+.glass:hover {
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+}
+.text-secondary {
+  color: rgba(148, 163, 184, 0.95);
+}
+
+html.dark .text-secondary {
+  color: #94a3b8;
+}
