@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden transition-colors duration-500"
+      className="relative min-h-screen flex items-center pt-24 md:pt-0 overflow-hidden transition-colors duration-500"
       style={{
         background: "var(--bg)",
         color: "var(--text)",

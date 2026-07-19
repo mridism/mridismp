@@ -46,9 +46,9 @@ export default function Navbar() {
   dark:border-blue-500/20
   border-slate-200`}
     >
-      <div className="max-w-7xl mx-auto h-20 px-6 grid grid-cols-3 items-center">
-        <div className="flex justify-start">
-          <h1 className="text-2xl font-bold cursor-pointer">
+      <div className="max-w-7xl mx-auto h-20 px-5 flex items-center justify-between">
+        <div className="flex items-center">
+          <h1 className="text-xl md:text-2xl font-bold">
             &lt;Mridul <span className="text-blue-500">/&gt;</span>
           </h1>
         </div>
@@ -104,7 +104,10 @@ export default function Navbar() {
             )}
           </button>
         </div>
-        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+        <button
+          className="md:hidden z-[1001]"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? <HiX size={30} /> : <HiMenuAlt3 size={30} />}
         </button>
       </div>
@@ -115,11 +118,11 @@ export default function Navbar() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-50 left-1/2 -translate-x-1/2 z-[9999]"
+            className="fixed top-24 md:top-28 left-1/2 -translate-x-1/2 z-[9999]"
           >
             <motion.div
               className="
-  w-[480px]
+ w-[92vw] max-w-[480px]
   rounded-2xl
   p-6
   shadow-[0_0_40px_rgba(59,130,246,0.25)]
@@ -151,6 +154,34 @@ export default function Navbar() {
                 />
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden absolute top-22 left-0 w-full bg-slate-950/95 backdrop-blur-xl border-t border-white/10"
+          >
+            <ul className="flex flex-col py-4">
+              {links.map((item) => (
+                <li key={item}>
+                  <Link
+                    to={item.toLowerCase()}
+                    smooth={true}
+                    offset={-70}
+                    duration={600}
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-6 py-4 text-lg text-slate-300 hover:text-white hover:bg-white/5 cursor-pointer transition"
+                  >
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         )}
       </AnimatePresence>
