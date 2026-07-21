@@ -39,16 +39,26 @@ export default function Navbar() {
   }, []);
 
   return (
+    //   <header
+    //     className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
+    // ${scrolled ? "dark:bg-black/70 bg-white/80" : "dark:bg-black/30 bg-white/60"}
+    // backdrop-blur-xl
+    // dark:border-blue-500/20
+    // border-slate-200`}
+    //   >
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-  ${scrolled ? "dark:bg-black/70 bg-white/80" : "dark:bg-black/30 bg-white/60"}
-  backdrop-blur-xl
-  dark:border-blue-500/20
-  border-slate-200`}
+    ${
+      scrolled
+        ? "bg-slate-950/75 border-b border-blue-500/20"
+        : "bg-slate-950/40"
+    }
+    backdrop-blur-xl
+  `}
     >
       <div className="max-w-7xl mx-auto h-20 px-5 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl md:text-2xl font-bold">
+          <h1 className="text-xl md:text-2xl font-bold text-white">
             &lt;Mridul <span className="text-blue-500">/&gt;</span>
           </h1>
         </div>
@@ -64,7 +74,22 @@ export default function Navbar() {
                   smooth={true}
                   offset={-70}
                   duration={600}
-                  className="relative cursor-pointer dark:text-gray-300 text-slate-700 text-slate-700 dark:hover:text-white hover:text-slate-900 transition after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all after:duration-300 hover:after:w-full"
+                  className="
+relative
+cursor-pointer
+text-slate-300
+hover:text-white
+transition
+after:absolute
+after:left-0
+after:-bottom-1
+after:h-[2px]
+after:w-0
+after:bg-blue-500
+after:transition-all
+after:duration-300
+hover:after:w-full
+"
                 >
                   {item}
                 </Link>
@@ -100,7 +125,7 @@ export default function Navbar() {
             {darkMode ? (
               <HiSun className="text-yellow-400" size={20} />
             ) : (
-              <HiMoon className="text-slate-700" size={20} />
+              <HiMoon className="text-white" size={20} />
             )}
           </button>
         </div>
