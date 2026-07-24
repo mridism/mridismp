@@ -15,26 +15,42 @@ export default function Hero() {
         color: "var(--text)",
       }}
     >
-      {/* Background Blur */}
-      <div className="absolute w-96 h-96 bg-blue-600 rounded-full blur-[150px] opacity-20 top-20 -left-24"></div>
-      <div className="absolute w-96 h-96 bg-cyan-500 rounded-full blur-[150px] opacity-10 bottom-10 right-0"></div>
+      {/* Background Blur Effects */}
+      <div className="absolute w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[180px] opacity-25 top-20 -left-32 animate-pulse"></div>
+      <div className="absolute w-[400px] h-[400px] bg-cyan-500/25 rounded-full blur-[160px] opacity-20 bottom-20 right-0 animate-pulse delay-1000"></div>
+      <div className="absolute w-[350px] h-[350px] bg-purple-500/20 rounded-full blur-[140px] opacity-15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse delay-700"></div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left */}
+        {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="order-2 lg:order-1"
         >
-          <p className="text-blue-400 text-lg mb-3">Hello, I'm</p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-blue-400 text-lg mb-4 font-medium tracking-wide"
+          >
+            Hello, I'm
+          </motion.p>
 
-          <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight"
+          >
             Mridul
             <br />
-            Arya
-          </h1>
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Arya
+            </span>
+          </motion.h1>
 
-          <div className="mt-6 text-2xl dark:text-gray-300 text-slate-700 font-semibold h-12">
+          <div className="mt-8 text-2xl dark:text-gray-300 text-slate-700 font-semibold h-14 flex items-center">
             <TypeAnimation
               sequence={[
                 "Frontend Developer",
@@ -48,69 +64,125 @@ export default function Hero() {
               ]}
               speed={50}
               repeat={Infinity}
+              wrapper="span"
             />
           </div>
 
-          <p className="mt-8 text-secondary max-w-xl leading-8">
-            Passionate Frontend Developer with experience building modern,
+          <p className="mt-8 text-secondary max-w-xl leading-relaxed text-lg">
+            Passionate Frontend Developer with expertise in building modern,
             scalable and responsive web applications using React, Next.js,
-            JavaScript and Tailwind CSS.
+            JavaScript and Tailwind CSS. Transforming ideas into elegant digital experiences.
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
             <a
               href="/resume.pdf"
-              className="flex items-center gap-2 bg-blue-600 px-8 py-4 rounded-xl hover:bg-blue-500 transition"
+              className="group flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-400 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1"
             >
-              <FaDownload />
-              Resume
+              <FaDownload className="transition-transform group-hover:animate-bounce" />
+              <span className="font-semibold">Download Resume</span>
             </a>
 
             <a
               href="#contact"
-              className="border border-white/20 px-8 py-4 rounded-xl hover:bg-white hover:text-black transition"
+              className="group border border-white/20 px-8 py-4 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all transform hover:-translate-y-1"
             >
-              Contact Me
+              <span className="font-semibold">Contact Me</span>
             </a>
           </div>
 
           <div className="flex gap-6 mt-12 text-3xl">
-            <a href="https://github.com/mridism" target="_blank">
+            <a 
+              href="https://github.com/mridism" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-blue-400 transition-all transform hover:scale-110 hover:-translate-y-1"
+              aria-label="GitHub Profile"
+            >
               <FaGithub />
             </a>
 
             <a
               href="https://linkedin.com/in/mridul-arya-059634154"
               target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-blue-500 transition-all transform hover:scale-110 hover:-translate-y-1"
+              aria-label="LinkedIn Profile"
             >
               <FaLinkedin />
             </a>
 
-            <a href="mailto:mridularya68@gmail.com">
+            <a 
+              href="mailto:mridularya68@gmail.com"
+              className="text-slate-400 hover:text-blue-400 transition-all transform hover:scale-110 hover:-translate-y-1"
+              aria-label="Email Address"
+            >
               <HiOutlineMail />
             </a>
           </div>
         </motion.div>
 
-        {/* Right */}
-
+        {/* Right - Hero Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="flex justify-center"
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="flex justify-center order-1 lg:order-2"
         >
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-blue-500 blur-3xl opacity-40 animate-pulse"></div>
-
+          <div className="relative group">
+            {/* Animated glow behind image */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity duration-500"></div>
+            
+            {/* Rotating border effect */}
+            <div className="absolute inset-[-8px] rounded-full bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 animate-spin-slow opacity-70"></div>
+            
             <img
               src={hero}
-              alt="Mridul Arya"
-              className="relative w-[330px] lg:w-[430px] rounded-full border-4 border-blue-500 shadow-2xl"
+              alt="Mridul Arya - Frontend Developer"
+              className="relative w-[300px] lg:w-[420px] h-[300px] lg:h-[420px] rounded-full border-4 border-blue-500/50 shadow-2xl object-cover transition-transform duration-500 group-hover:scale-105"
             />
+            
+            {/* Floating badges */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="absolute -right-4 top-1/4 bg-slate-900/90 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-500/30 shadow-lg"
+            >
+              <span className="text-blue-400 font-semibold text-sm">4+ Years Exp</span>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="absolute -left-4 bottom-1/4 bg-slate-900/90 backdrop-blur-sm px-4 py-2 rounded-full border border-cyan-500/30 shadow-lg"
+            >
+              <span className="text-cyan-400 font-semibold text-sm">React Expert</span>
+            </motion.div>
           </div>
         </motion.div>
       </div>
+      
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 border-2 border-blue-400/50 rounded-full flex justify-center pt-2"
+        >
+          <motion.div
+            animate={{ opacity: [1, 0, 1], y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1.5 h-3 bg-blue-400 rounded-full"
+          ></motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

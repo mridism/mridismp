@@ -27,25 +27,23 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
-
   font-family: "Poppins", sans-serif;
-
   background: var(--bg);
   color: var(--text);
-
   transition:
     background 0.35s ease,
     color 0.35s ease;
 }
 
-/* ---------- Glass ---------- */
+/* ---------- Glassmorphism ---------- */
 
 .glass {
   background: var(--glass);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-radius: 24px;
-  transition: 0.35s;
+  transition: all 0.35s ease;
 }
 
 .glass:hover {
@@ -53,10 +51,69 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
 }
+
 .text-secondary {
   color: rgba(148, 163, 184, 0.95);
 }
 
 html.dark .text-secondary {
   color: #94a3b8;
+}
+
+/* ---------- Custom Animations ---------- */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Smooth scrolling with Lenis-friendly behavior */
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #06b6d4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #0891b2);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: inherit;
+}
+
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #22d3ee, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
