@@ -26,18 +26,20 @@ export default function Hero() {
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
+          style={{ paddingTop: "40px" }}
           className="order-2 lg:order-1"
         >
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-blue-400 text-lg mb-4 font-medium tracking-wide"
+            style={{ marginBottom: "-5px" }}
           >
             Hello, I'm
           </motion.p>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
@@ -71,7 +73,8 @@ export default function Hero() {
           <p className="mt-8 text-secondary max-w-xl leading-relaxed text-lg">
             Passionate Frontend Developer with expertise in building modern,
             scalable and responsive web applications using React, Next.js,
-            JavaScript and Tailwind CSS. Transforming ideas into elegant digital experiences.
+            JavaScript and Tailwind CSS. Transforming ideas into elegant digital
+            experiences.
           </p>
 
           <div className="flex flex-wrap gap-5 mt-10">
@@ -92,8 +95,8 @@ export default function Hero() {
           </div>
 
           <div className="flex gap-6 mt-12 text-3xl">
-            <a 
-              href="https://github.com/mridism" 
+            <a
+              href="https://github.com/mridism"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-blue-400 transition-all transform hover:scale-110 hover:-translate-y-1"
@@ -112,7 +115,7 @@ export default function Hero() {
               <FaLinkedin />
             </a>
 
-            <a 
+            <a
               href="mailto:mridularya68@gmail.com"
               className="text-slate-400 hover:text-blue-400 transition-all transform hover:scale-110 hover:-translate-y-1"
               aria-label="Email Address"
@@ -123,6 +126,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Right - Hero Image */}
+
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -130,40 +134,35 @@ export default function Hero() {
           className="flex justify-center order-1 lg:order-2"
         >
           <div className="relative group">
-            {/* Animated glow behind image */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity duration-500"></div>
-            
-            {/* Rotating border effect */}
-            <div className="absolute inset-[-8px] rounded-full bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 animate-spin-slow opacity-70"></div>
-            
+            {/* Pulsating glow */}
+            <div className="absolute -inset-0 rounded-[45%] bg-blue-500/20 blur-[90px] animate-pulse" />
+
+            {/* Secondary glow */}
+            <div className="absolute -inset-[-8px] rounded-[45%] bg-cyan-400/20 blur-[60px] animate-ping opacity-20" />
+
+            {/* Animated gradient border */}
+            <div className="absolute inset-0 rounded-[42%] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-600 p-[4px]">
+              <div className="w-full h-full rounded-[42%] bg-slate-950" />
+            </div>
+
             <img
               src={hero}
-              alt="Mridul Arya - Frontend Developer"
-              className="relative w-[300px] lg:w-[420px] h-[300px] lg:h-[420px] rounded-full border-4 border-blue-500/50 shadow-2xl object-cover transition-transform duration-500 group-hover:scale-105"
+              alt="Mridul Arya"
+              className="
+    relative
+    w-[300px] h-[360px]
+    lg:w-[420px] lg:h-[500px]
+    object-cover
+    rounded-[42%]
+    border
+    border-white/80
+    shadow-[0_0_60px_rgba(59,130,246,0.25)]
+  "
             />
-            
-            {/* Floating badges */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="absolute -right-4 top-1/4 bg-slate-900/90 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-500/30 shadow-lg"
-            >
-              <span className="text-blue-400 font-semibold text-sm">4+ Years Exp</span>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              className="absolute -left-4 bottom-1/4 bg-slate-900/90 backdrop-blur-sm px-4 py-2 rounded-full border border-cyan-500/30 shadow-lg"
-            >
-              <span className="text-cyan-400 font-semibold text-sm">React Expert</span>
-            </motion.div>
           </div>
         </motion.div>
       </div>
-      
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}

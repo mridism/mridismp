@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import TicTacToe from "./../project/TicTacToe";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import projects from "../data/projects";
 

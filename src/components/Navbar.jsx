@@ -51,7 +51,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -66,7 +66,7 @@ export default function Navbar() {
             className="cursor-pointer"
           >
             <h1 className="text-xl md:text-2xl font-bold text-white hover:text-blue-400 transition-colors">
-              &lt;Mridul <span className="text-blue-500">&gt;</span>
+              &lt;Mridul <span className="text-blue-500">/&gt;</span>
             </h1>
           </Link>
         </motion.div>
@@ -75,7 +75,7 @@ export default function Navbar() {
         <nav className="hidden md:flex justify-center">
           <ul className="flex gap-1">
             {links.map((item, index) => (
-              <motion.li 
+              <motion.li
                 key={item}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -190,7 +190,8 @@ export default function Navbar() {
               </h2>
               <p className="leading-relaxed text-slate-600 dark:text-slate-300 text-center">
                 This portfolio has been carefully crafted with premium lighting,
-                glassmorphism and animations that are best experienced in Dark Mode.
+                glassmorphism and animations that are best experienced in Dark
+                Mode.
               </p>
               <div className="mt-8 h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
                 <motion.div
