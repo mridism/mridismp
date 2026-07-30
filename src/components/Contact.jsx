@@ -28,7 +28,10 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-14 mt-20">
+        <div
+          className="grid lg:grid-cols-2 gap-14 mt-20"
+          style={{ paddingLeft: "500px" }}
+        >
           {/* Left */}
 
           <motion.div
@@ -98,7 +101,7 @@ export default function Contact() {
 
           {/* Right */}
 
-          <motion.form
+          {/* <motion.form
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
@@ -132,7 +135,7 @@ export default function Contact() {
             <button className="w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-xl font-semibold transition">
               Send Message
             </button>
-          </motion.form>
+          </motion.form> */}
         </div>
       </div>
     </section>

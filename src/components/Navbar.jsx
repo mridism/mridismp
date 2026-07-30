@@ -3,15 +3,7 @@ import { HiMenuAlt3, HiX, HiMoon, HiSun } from "react-icons/hi";
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 
-const links = [
-  "Home",
-  "About",
-  "Experience",
-  "Skills",
-  "Projects",
-  "Education",
-  "Contact",
-];
+const links = ["Home", "About", "Experience", "Skills", "Education", "Contact"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
