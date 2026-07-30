@@ -16,9 +16,9 @@ export default function Hero() {
       }}
     >
       {/* Background Blur Effects */}
-      <div className="absolute w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[180px] opacity-25 top-20 -left-32 animate-pulse"></div>
-      <div className="absolute w-[400px] h-[400px] bg-cyan-500/25 rounded-full blur-[160px] opacity-20 bottom-20 right-0 animate-pulse delay-1000"></div>
-      <div className="absolute w-[350px] h-[350px] bg-purple-500/20 rounded-full blur-[140px] opacity-15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse delay-700"></div>
+      <div className="absolute pointer-events-none w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[180px] opacity-25 top-20 -left-32 animate-pulse"></div>
+      <div className="absolute pointer-events-none w-[400px] h-[400px] bg-cyan-500/25 rounded-full blur-[160px] opacity-20 bottom-20 right-0 animate-pulse delay-1000"></div>
+      <div className="absolute pointer-events-none w-[350px] h-[350px] bg-purple-500/20 rounded-full blur-[140px] opacity-15 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse delay-700"></div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
@@ -80,6 +80,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-5 mt-10">
             <a
               href="/resume.pdf"
+              // download="Mridul_Arya_Resume.pdf"
               className="group flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 rounded-xl hover:from-blue-500 hover:to-blue-400 transition-all shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-1"
             >
               <FaDownload className="transition-transform group-hover:animate-bounce" />
